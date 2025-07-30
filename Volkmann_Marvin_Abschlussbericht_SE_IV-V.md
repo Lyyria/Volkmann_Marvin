@@ -24,11 +24,39 @@ Meetings wurden einmal in der Woche gemacht. Dabei wurden dann meistens Fragen g
 ### Vorbereitung
 
 In der Vorbereitung war mein Teil die nötigen Sensoren, Kabel und ähnliches zu finden. Da wir bereits letztes Semester an einem Zeitbuchungssystem arbeiteten und ein Desk-Sharing-Tool eine Erweiterung davon ist, wussten wir ziemlich genau was wir einbauen wollten. Ich musste also nach einem möglichen Tageslichtsensor suchen. Außerdem gewisse LEDs die Rot und Grün leuchten können um damit die Belegung des Arbeitsplatz zu zeigen. Des Weiteren musste ich als Vorbereitung der Verkabel Skizzen erstellen, wie die LEDs und der Tageslichtsensor verkabelt werden können. 
-Dies machte ich mithilfe dem Programm Fritzing. Ich erstellte dadurch verschiedene mögliche Skizzen, womit alle dann wussten, wie sie die Kabel einstecken mussten
+Dies machte ich mithilfe dem Programm Fritzing. Ich erstellte dadurch verschiedene mögliche Skizzen, womit alle dann wussten, wie sie die Kabel einstecken mussten.
 
 ![Screenshot 3](https://i.imgur.com/5lTsIkK.png)
 
-
 ### Code
 
-Mein Teil des Projekts war es die GPIO Funktionen zu erstelle
+Mein Code Teil des Projekts war es die GPIO Funktionen zu erstellen. Also damit die LEDs grün leuchten wenn ein Arbeitsplatz offen ist und rot leuchten wenn er belegt ist. Dafür erstellte ich die led_control.py Datei, die dann in den Projekt Ordner hineinkam. Bei der Erstellung der Funktionen orientierte ich mich an dem Skript Unit 2 Relais, da dort das GPIO.setup bereits grob vorgegeben wurde.
+
+              GPIO.setmode(GPIO.BCM)
+              GPIO.setwarnings(False)
+
+              def setup_pins(red_pin, green_pin):
+                  GPIO.setup(red_pin, GPIO.OUT)
+                  GPIO.setup(green_pin, GPIO.OUT)
+
+
+              def led_off(red_pin, green_pin):
+                  GPIO.output(red_pin, GPIO.LOW)
+                  GPIO.output(green_pin, GPIO.LOW)
+
+              def  led_red(red_pin, green_pin):
+                  GPIO.output(red_pin, GPIO.HIGH)
+                  GPIO.output(green_pin, GPIO.LOW)
+
+              def led_green(red_pin, green_pin):
+                  GPIO.output(red_pin, GPIO.LOW)
+                  GPIO.output(green_pin, GPIO.HIGH)
+
+Hierbei setzte ich zuerst den Modus auf den Broadcom SOC channel. Dadurch bezogen wir uns auf die internen Nummern der Pins. Danach musste ich zwei GPIO Pins als Ausgänge konfigurieren. Jeweils einen für die zei verschiedenen Farben.
+
+Danach musste ich die Funktionen schreiben, wann die LED aus ist, auf Rot geht und wann auf Grün geht. Um sie auszuschalten muss natürlich keine Spannung da sein, daher ist es zweimal GPIO.LOW
+Damit Die LED rot leuchtet, muss der rote Pin GPIO.High sein und der grüne Pin GPIO.LOW sein damit der Strom fließt.
+Wenn sie grün leuchten soll, muss es einfach das gegenteil von Rot sein. 
+
+
+
