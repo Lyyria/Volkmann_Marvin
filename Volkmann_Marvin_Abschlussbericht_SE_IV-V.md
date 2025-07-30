@@ -58,5 +58,34 @@ Danach musste ich die Funktionen schreiben, wann die LED aus ist, auf Rot geht u
 Damit Die LED rot leuchtet, muss der rote Pin GPIO.High sein und der grüne Pin GPIO.LOW sein damit der Strom fließt.
 Wenn sie grün leuchten soll, muss es einfach das gegenteil von Rot sein. 
 
+Eine weitere Funktion brauchte es dann noch, um die Datei in der views.py zu verwenden.
 
+              def set_led_status(gpio_red, gpio_green, status):
+                  setup_pins(gpio_red, gpio_green)
+
+                  if status == "frei":
+                      led_green(gpio_red, gpio_green)
+                  elif status == "belegt":
+                      led_red(gpio_red, gpio_green)
+                  else:
+                      led_off(gpio_red, gpio_green)
+
+Hierbei musste ich es so machen, dass die LED dann auch tatsächlich die Farben aktiviert. Wenn der Status frei ist soll sie grün leuchten, wenn er belegt ist rot und wenn gar nichts ist, soll sie aussein.
+
+Nun musste ich diese Datei auch mit der views.py verbinden. Dafür brauchte ich die set_led_status Funktion.
+
+              from .led_control import set_led_status
+
+So konnte ich sie mir holen. In der views.py fügte ich dann den folgenden Code hinzu.
+
+              if "gpio_red" in arbeitsplatz and "gpio_green" in arbeitsplatz:
+                  try:
+                      set_led_status(
+                          arbeitsplatz["gpio_red"],
+                          arbeitsplatz["gpio_green"],
+                          arbeitsplatz["status"]
+
+Hier griff ich auch die arbeitsplaetze.json zu, in der wir die Arbeitsplätze vordefinierten und ihnen jeweils einen gpio_red und gpio_green Pin zuwiesen. Danach musste dann die set_led_status miteingebunden werden. Die verschiedenen Statuse wurden bereits in der led_control.py definiert.
+
+![Screenshot 4](https://i.imgur.com/m3QQ9Mp.png)
 
