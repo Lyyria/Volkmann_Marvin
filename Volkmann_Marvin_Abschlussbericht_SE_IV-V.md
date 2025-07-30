@@ -5,4 +5,10 @@ Bereits vor dem Start des Projekts fingen wir an , uns mit dem Raspberry Pi ausa
 
 ![Screenshot 1](https://i.imgur.com/B1AZpYO.png).
 
-Weitere Kategorien waren Wissens-Management, Planung/Vorbereitung, Einkauf Material und IT-Messe. 
+Weitere Kategorien waren Wissens-Management, Planung/Vorbereitung, Einkauf Material und IT-Messe. Somit hatten wir eine klare Übersicht über alle möglichen Aufgaben.
+
+## Code
+
+Den Code teilten wir wie bereits erwähnt auf Github. Es wurde zuerst jede Datei des Servers hochgeladen. Danach konnte dann jeder die Datei an der er arbeitete einfach überschreiben und die anderen konnten es sich so auf ihren eigenen Server ziehen. 
+
+![Screenshot 2](https://i.imgur.com/KfvGl6L.png).
