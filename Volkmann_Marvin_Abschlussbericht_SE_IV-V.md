@@ -93,7 +93,7 @@ Hier griff ich auch die arbeitsplaetze.json zu, in der wir die Arbeitsplätze vo
 
 ![Screenshot 4](https://i.imgur.com/m3QQ9Mp.png)
 
-Eine weitere Aufgabe meinerseits war es den Tageslichtsensor miteinzubinden. Auch dafür erstellte ich eine Datei im Projekt Ordner die ich tageslichtsensor.py nannte. Um den Sensor zu verwenden musste ich einige Module importieren. smbus2 um mit dem Sensor zu kommunizieren. time damit es Pausen gibt und threading damit jeder Sensor einen eigenen Mess-Thread hat.
+Eine weitere Aufgabe meinerseits war es den Tageslichtsensor miteinzubinden. Zuerst musste ich dafür im Raspberry Pi in den Einstellungen I2C enablen. Dann erstellte ich eine Datei im Projekt Ordner die ich tageslichtsensor.py nannte. Um den Sensor zu verwenden musste ich einige Module importieren. smbus2 um mit dem Sensor zu kommunizieren. time damit es Pausen gibt und threading damit jeder Sensor einen eigenen Mess-Thread hat.
 Des Weiteren erstellte ich 3 Dictionarys um die Sensor threads zu verwalten, Stop signale zu haben und um die Luxwerte zwischenzuspeichern.
 
             import smbus2
