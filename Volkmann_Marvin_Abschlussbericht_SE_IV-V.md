@@ -89,7 +89,7 @@ So konnte ich sie mir holen. In der views.py fügte ich dann den folgenden Code 
                           arbeitsplatz["gpio_green"],
                           arbeitsplatz["status"]
 
-Hier griff ich auch die arbeitsplaetze.json zu, in der wir die Arbeitsplätze vordefinierten und ihnen jeweils einen gpio_red und gpio_green Pin zuwiesen. Danach musste dann die set_led_status miteingebunden werden. Die verschiedenen Statuse wurden bereits in der led_control.py definiert.
+Hier griff ich auch die arbeitsplaetze.json zu, in der wir die Arbeitsplätze vordefinierten und ihnen jeweils einen gpio_red und gpio_green Pin zuwiesen. Danach musste dann die set_led_status miteingebunden werden. Die verschiedenen Statuswurden bereits in der led_control.py definiert.
 
 ![Screenshot 4](https://i.imgur.com/m3QQ9Mp.png)
 
