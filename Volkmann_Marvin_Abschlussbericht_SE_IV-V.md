@@ -1,7 +1,7 @@
 # Abschlussbericht SE IV-V Desk-Sharing Tool Marvin Volkmann
 
 ## Organisation
-Bereits vor dem Start des Projekts fingen wir an , uns mit dem Raspberry Pi ausanderzusetzen. Wir erstellten unsere Teams Gruppe. Da wir im vorherigen Projekt bereits mit dem eingebauten Kanban-Board gearbeitet haben, viel es uns leicht es diesesmal wieder zutun. Um unseren Code gegeinander auszutauschen, benutzten wir wiedr Github. Über den gesamten Februar machten wir uns also daran Wissen aufzubauen, damit wir bereits eine solide Wissensbasis zum Start des Projekts hatten. So wussten wir bereit auch früh was unser Projekt werden sollte. Am Start des Projekts haben wir uns dann in die unterschiedlichen Rollen eingeteilt, wobei wir es recht flexibel hielten um uns gengeseitig unterstützen zu können. Im Kanban-Boar dtrugen wir die einzlnen Teilaufgaben ein, beziehungsweise teilten alles grob auf in Frontend, Backend und GPIO. So hatte jeder eine gute Übersicht über eine einzelnen Aufgaben. Weitere Aufgaben konnten wir dazugeben und existierende abändern, falls es nötig war. Weitere Kategorien waren Wissens-Management, Planung/Vorbereitung, Einkauf Material und IT-Messe. Somit hatten wir eine klare Übersicht über alle möglichen Aufgaben.
+Bereits vor dem Start des Projekts fingen wir an , uns mit dem Raspberry Pi ausanderzusetzen. Wir erstellten unsere Teams Gruppe. Da wir im vorherigen Projekt bereits mit dem eingebauten Kanban-Board gearbeitet haben, viel es uns leicht es diesesmal wieder zutun. Um unseren Code gegeinander auszutauschen, benutzten wir wieder Github. Über den gesamten Februar machten wir uns also daran, Wissen aufzubauen, damit wir bereits eine solide Wissensbasis zum Start des Projekts hatten. So wussten wir bereit auch früh was unser Projekt werden sollte. Am Start des Projekts haben wir uns dann in die unterschiedlichen Rollen eingeteilt, wobei wir es recht flexibel hielten um uns gengeseitig unterstützen zu können. Im Kanban-Board trugen wir die einzelnen Teilaufgaben ein, beziehungsweise teilten alles grob auf in Frontend, Backend und GPIO. So hatte jeder eine gute Übersicht über seine einzelnen Aufgaben. Weitere Aufgaben konnten wir dazugeben und existierende abändern, falls es nötig war. Weitere Kategorien waren Wissens-Management, Planung/Vorbereitung, Einkauf Material und IT-Messe. Somit hatten wir eine klare Übersicht über alle möglichen Aufgaben.
 
 ![Screenshot 1](https://i.imgur.com/B1AZpYO.png)
 
@@ -17,18 +17,18 @@ In den Ordnern lagen dann die Templates, .views, .urls, Datenbanken sowie die GP
 
 ### Meetings
 
-Meetings wurden einmal in der Woche gemacht. Dabei wurden dann meistens Fragen geklärt, Ergebnisse besprochen und neue Aufgaben erstellt. Danach wurden meistens der Termin daes nächsten Meetings im aktuellen besprochen. Vorallem gegen Ende des Projekts hatten wir dann auch teilweise zwei Meetings in der Woche um die letzten Probleme zu klären.
+Meetings wurden einmal in der Woche gemacht. Dabei wurden dann meistens Fragen geklärt, Ergebnisse besprochen und neue Aufgaben erstellt. Danach wurden meistens der Termin des nächsten Meetings besprochen. Vorallem gegen Ende des Projekts hatten wir dann auch teilweise zwei Meetings in der Woche um die letzten Probleme zu klären.
 
 ## Eigenleistung
 
 ### Organisation
 
-Bei mir war es der Plan, dass ich in Sprint 1 Materialien beschaffe und die GPIO Funktionen für die LEDs schreibe. In Sprint 2 erstellte ich dann die Tageslichtsensorfunktionen und in Sprint 3 erstellte ich das Modell.
+Bei mir war es der Plan, dass ich in Sprint 1 Materialien beschaffe und die GPIO Funktionen für die LEDs schreibe. In Sprint 2 erstellte ich dann die Tageslichtsensorfunktionen und in Sprint 3 das Modell.
 
 ### Vorbereitung
 
-In der Vorbereitung war mein Teil die nötigen Sensoren, Kabel und ähnliches zu finden. Da wir bereits letztes Semester an einem Zeitbuchungssystem arbeiteten und ein Desk-Sharing-Tool eine Erweiterung davon ist, wussten wir ziemlich genau was wir einbauen wollten. Ich musste also nach einem möglichen Tageslichtsensor suchen. Außerdem gewisse LEDs die Rot und Grün leuchten können um damit die Belegung des Arbeitsplatz zu zeigen. Des Weiteren musste ich als Vorbereitung der Verkabel Skizzen erstellen, wie die LEDs und der Tageslichtsensor verkabelt werden können. 
-Dies machte ich mithilfe dem Programm Fritzing. Ich erstellte dadurch verschiedene mögliche Skizzen, womit alle dann wussten, wie sie die Kabel einstecken mussten.
+In der Vorbereitung war mein Teil die nötigen Sensoren, Kabel und ähnliches zu finden. Da wir bereits letztes Semester an einem Zeitbuchungssystem arbeiteten und ein Desk-Sharing-Tool eine Erweiterung davon ist, wussten wir ziemlich genau was wir einbauen wollten. Ich musste also nach einem möglichen Tageslichtsensor suchen. Außerdem gewisse LEDs die Rot und Grün leuchten können um damit die Belegung des Arbeitsplatzes zu zeigen. 
+Während der Erstellung der GPIO Funktionen erstellte ich Skizzen, wie die LEDs und der Tageslichtsensor verkabelt werden mussten. Dies machte ich mithilfe des Programms Fritzing. Ich erstellte dadurch verschiedene mögliche Skizzen, womit alle dann wussten, wie sie die Kabel einstecken mussten.
 
 ![Screenshot 3](https://i.imgur.com/5lTsIkK.png)
 
@@ -56,9 +56,9 @@ Mein Code Teil des Projekts war es die GPIO Funktionen zu erstellen. Also damit 
                   GPIO.output(red_pin, GPIO.LOW)
                   GPIO.output(green_pin, GPIO.HIGH)
 
-Hierbei setzte ich zuerst den Modus auf den Broadcom SOC channel. Dadurch bezogen wir uns auf die internen Nummern der Pins. Danach musste ich zwei GPIO Pins als Ausgänge konfigurieren. Jeweils einen für die zei verschiedenen Farben.
+Hierbei setzte ich zuerst den Modus auf den Broadcom SOC channel. Dadurch bezogen wir uns auf die internen Nummern der Pins. Danach musste ich zwei GPIO Pins als Ausgänge konfigurieren. Jeweils einen für die zwei verschiedenen Farben.
 
-Danach musste ich die Funktionen schreiben, wann die LED aus ist, auf Rot geht und wann auf Grün geht. Um sie auszuschalten muss natürlich keine Spannung da sein, daher ist es zweimal GPIO.LOW
+Danach musste ich die Funktionen schreiben, wann die LED aus ist, auf Rot geht und wann auf Grün geht. Um sie auszuschalten muss natürlich keine Spannung da sein, daher ist es zweimal GPIO.LOW.
 Damit Die LED rot leuchtet, muss der rote Pin GPIO.High sein und der grüne Pin GPIO.LOW sein damit der Strom fließt.
 Wenn sie grün leuchten soll, muss es einfach das gegenteil von Rot sein. 
 
@@ -74,7 +74,7 @@ Eine weitere Funktion brauchte es dann noch, um die Datei in der views.py zu ver
                   else:
                       led_off(gpio_red, gpio_green)
 
-Hierbei musste ich es so machen, dass die LED dann auch tatsächlich die Farben aktiviert. Wenn der Status frei ist soll sie grün leuchten, wenn er belegt ist rot und wenn gar nichts ist, soll sie aussein.
+Hierbei musste ich es so machen, dass die LED dann auch tatsächlich die Farben aktiviert. Wenn der Status frei ist soll sie grün leuchten, wenn er belegt ist rot und wenn gar nichts ist, soll sie aus sein.
 
 Nun musste ich diese Datei auch mit der views.py verbinden. Dafür brauchte ich die set_led_status Funktion.
 
@@ -89,11 +89,11 @@ So konnte ich sie mir holen. In der views.py fügte ich dann den folgenden Code 
                           arbeitsplatz["gpio_green"],
                           arbeitsplatz["status"]
 
-Hier griff ich auch die arbeitsplaetze.json zu, in der wir die Arbeitsplätze vordefinierten und ihnen jeweils einen gpio_red und gpio_green Pin zuwiesen. Danach musste dann die set_led_status miteingebunden werden. Die verschiedenen Statuswurden bereits in der led_control.py definiert.
+Hier griff ich auch die arbeitsplaetze.json zu, in der wir die Arbeitsplätze vordefinierten und ihnen jeweils einen gpio_red und gpio_green Pin zuwiesen. Danach musste dann die set_led_status miteingebunden werden. Die verschiedenen Status wurden bereits in der led_control.py definiert.
 
 ![Screenshot 4](https://i.imgur.com/m3QQ9Mp.png)
 
-Eine weitere Aufgabe meinerseits war es den Tageslichtsensor miteinzubinden. Auch dafür erstellte ich eine Datei im Projekt Ordner die ich tageslichtsensor.py nannte. Um den Sensor zu verwenden musste ich einige Module importieren. smbus2 um mit dem Sensor zu kommunizieren. time damit er nur alle 10 Seekunden misst und threading damit jeder sensor einen eigenen Mess-Thread hat.
+Eine weitere Aufgabe meinerseits war es den Tageslichtsensor miteinzubinden. Auch dafür erstellte ich eine Datei im Projekt Ordner die ich tageslichtsensor.py nannte. Um den Sensor zu verwenden musste ich einige Module importieren. smbus2 um mit dem Sensor zu kommunizieren. time damit es Pausen gibt und threading damit jeder Sensor einen eigenen Mess-Thread hat.
 Des Weiteren erstellte ich 3 Dictionarys um die Sensor threads zu verwalten, Stop signale zu haben und um die Luxwerte zwischenzuspeichern.
 
             import smbus2
@@ -104,7 +104,7 @@ Des Weiteren erstellte ich 3 Dictionarys um die Sensor threads zu verwalten, Sto
             stop_events = {}
             luxwerte = {}
 
-Danch erstellte ich vier Funktionen. Eine für die dauerhafte Messung, eine um den Sensor zu starten und eine um ihn zu stoppen und eine um die Luxwerte zu bekommen.
+Danach erstellte ich vier Funktionen. Eine für die dauerhafte Messung, eine um den Sensor zu starten und eine um ihn zu stoppen und eine um die Luxwerte zu bekommen.
 
             def dauerhafte_messung(arbeitsplatz_id, i2c_bus, i2c_address):
                 bus = smbus2.SMBus(i2c_bus)
@@ -126,9 +126,9 @@ Danch erstellte ich vier Funktionen. Eine für die dauerhafte Messung, eine um d
 
             bus.close()
 
-Hier musste ich zuerst den I²C Bus öffnen, den richtigen Modus einstellen und ein stop event einbauen um das Stoppen zu steuern. Der Hauptteil besteht aus dem auslesen der Sensorergebnisse und dem dem daraus berechnenden Luxwert. Der Luxwert wir dann im dafür erstellten Dictionary gesperichert und ausgegeben. time.sleep(0.15) ist dafür, da der Sensor Zeit benötigt um zu messen.
+Hier musste ich zuerst den I²C Bus öffnen, den richtigen Modus einstellen und ein stop event einbauen um das Stoppen zu steuern. Der Hauptteil besteht aus dem auslesen der Sensorergebnisse und dem dem daraus berechnenden Luxwert. Der Luxwert wir dann im dafür erstellten Dictionary gespeichert und ausgegeben. time.sleep(0.15) ist dafür, da der Sensor Zeit benötigt um zu messen.
 
-Dann erstellte ich nich eine Exception, falls Fehler auftreten sollten. Vor der nächsten Messung sollter er dann 5 Sekunden warten.
+Dann erstellte ich noch eine Exception, falls Fehler auftreten sollten. Vor der nächsten Messung sollter er dann 5 Sekunden warten.
 
 die Funktion start_sensor ist dafür um einen neuen Thread zu starten, falls noch keiner läuft.
 
@@ -136,9 +136,9 @@ die Funktion start_sensor ist dafür um einen neuen Thread zu starten, falls noc
                 if arbeitsplatz_id in sensor_threads and sensor_threads[arbeitsplatz_id].is_alive():
                     return  
 
-Um einen Doppelstart zu verhindern er gab ich dieese Zeile dazu.
+Um einen Doppelstart zu verhindern, gab ich diese Zeile dazu.
 
-Da wir aber auf Probleme stießen, wie der Sensor im Jintergrund lief, musste ich den Mess-Thread im hintergrund als Daemon laufen lassen
+Da wir aber auf Probleme stießen, wie der Sensor im Hintergrund lief, musste ich den Mess-Thread im Hintergrund als Daemon laufen lassen.
 
             stop_events[arbeitsplatz_id] = threading.Event()
             thread = threading.Thread(
@@ -198,14 +198,14 @@ start_sensor fügte ich dann in arbeitsplatz_buchen hinzu. stop_sensor zu arbeit
 
               return JsonResponse({"lux": "kein Sensor angeschlossen"})
 
-Hierbei fügte ich wie in allen unserern Funktionen in dr views.py die überprüfung ob der Benutzer auch eingeloggt ist. Dann wird die Arbeitsplaetze.json geöffnet in der die Arbeitsplätze stehen.
+Hierbei fügte ich wie in allen unserern Funktionen in der views.py die Überprüfung ob der Benutzer auch eingeloggt ist. Dann wird die Arbeitsplaetze.json geöffnet in der die Arbeitsplätze stehen.
 In dieser Datei wird dann nach dem belegten Arbeitsplatz des Benutzers gesucht. Dann wird der aktuelle Luxwert des Arbeitsplatzes aufgerufen und zurückgegeben.
 
 ### Modell
 
-Meine dritte Aufgabe war es ein Modell zu erstellen. Wir wollten unser Modell aus Holz bauen, also brauchten wir Geräte um das Holz zu bearbeiten und zusammenzufügen. Hier hat mir KI sehr geholfen, da wir eine Vision unserem vorgestellen Modell erzeugten. Dadurch konnte ich dann meinem Onkel zeigen wie das Holz geschnitten werden sollte. Mithilfe einer Holzsäge konnte er dann das Holz sägen. Zuhause habe ich es dann mit Leim und Schraubzwingen habe ich dann das Holz zusammengeklebt und Löcher hineingebohrt. In der letzten Woche vor der Projektmesse traf ich mich dann mit Stefan im Urban-Harbour um die LEDs zu verkabeln und mit unseren Raspberry Pis zu verbinden. Hier trat dann das Problem auf, dass mein Raspberry sich nicht mit unseren Hotspots verbinden wollte, egal was wir machten. Dadurch mussten wir dann mit einem arbeiten und konnten daher auch nur einen Tageslichtsensor verwenden und auch nicht alle geplanten Arbeitsplätze, da es einfach keine Pins mehr gab.
+Meine dritte Aufgabe war es ein Modell zu erstellen. Wir wollten unser Modell aus Holz bauen, also brauchten wir Geräte um das Holz zu bearbeiten und zusammenzufügen. Hier hat mir KI sehr geholfen, da wir eine Vision von unserem vorgestellen Modell erzeugten. Dadurch konnte ich dann meinem Onkel zeigen wie das Holz geschnitten werden sollte. Mithilfe einer Holzsäge konnte er dann das Holz sägen. Zuhause habe ich dann mit Leim und Schraubzwingen das Holz zusammengeklebt und Löcher hineingebohrt. In der letzten Woche vor der Projektmesse traf ich mich dann mit Stefan im Urban-Harbour um die LEDs zu verkabeln und mit unseren Raspberry Pis zu verbinden. Hier trat dann das Problem auf, dass mein Raspberry sich nicht mit unseren Hotspots verbinden wollte, egal was wir machten. Dadurch konnten wir dann nur mit einem arbeiten und konnten daher auch nur einen Tageslichtsensor verwenden und auch nicht alle geplanten Arbeitsplätze, da es einfach keine Pins mehr gab.
 
 ## Fazit
 
-Dadurch dass wir bereits im vorherigen Semester ein Zeitbuchungssystem erstellten, waren einige Dinge hier leichter, da die Grundbasis schon bestand und wir einiges vom vorherigen Projekt nehmen konnten. Allerdings waren vorallem die Sensoren extrem schwer zu verbinden und korrekt einzusetzen. Duurch unsere gute Vorarbeitung und Einteilung der Aufgaben hat am Ende alles aber gepasst. Es war sehr interessant und hat viel Spaß gemacht so ein Tool zu entwickeln, da es diesesmal auch viel Anwendungsmöglichkeiten im tatsächlichen Leben haben kann.  Der Raspberry Pi war neu, ich konnte mich aber schnell mit ihn zurechtfinden.
+Dadurch dass wir bereits im vorherigen Semester ein Zeitbuchungssystem erstellten, waren einige Dinge hier leichter, da die Basis schon bestand und wir einiges vom vorherigen Projekt mitnehmen konnten. Allerdings waren vorallem die Sensoren extrem schwer zu verbinden und korrekt einzusetzen. Durch unsere gute Vorarbeitung und Einteilung der Aufgaben hat am Ende alles aber gepasst. Es war sehr interessant und hat viel Spaß gemacht so ein Tool zu entwickeln, da es diesesmal auch viel Anwendungsmöglichkeiten im tatsächlichen Leben haben kann. Der Raspberry Pi war neu, ich konnte mich aber schnell mit ihm zurechtfinden.
 
